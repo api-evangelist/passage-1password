@@ -1,0 +1,83 @@
+aid: passage-1password
+name: Passage by 1Password
+review:
+  question: Does Passage by 1Password expose a documented public WebSocket or streaming API?
+  answer: false
+  date: '2026-06-20'
+  reviewer: API Evangelist
+  asyncapiSpecCreated: false
+  asyncapiScopeNote: |
+    No AsyncAPI document was authored. The Passage Management API is a
+    request/response REST surface under https://api.passage.id/v1 with no
+    documented WebSocket, SSE, or other event-stream transport. Account-level
+    activity is surfaced through the separate Passage/1Password events tooling,
+    not a public streaming API on this surface.
+findings:
+  summary: |
+    Passage by 1Password is a passwordless / passkey (WebAuthn) authentication
+    platform. It exposes a real, documented server-side REST Management API at
+    https://api.passage.id/v1, authenticated with a per-app Bearer API key,
+    covering user CRUD, activate/deactivate, WebAuthn device listing/deletion,
+    refresh-token revocation, and magic link creation. Frontend passwordless
+    flows (passkey registration/login, magic link redemption) are driven by
+    Passage SDKs/Elements and validated against the app's JWKS. The documented
+    Management API endpoints below were confirmed from the official
+    passageidentity/passage-go client, which is generated directly from
+    Passage's OpenAPI definition.
+
+    IMPORTANT STATUS NOTE: 1Password has announced that the Passage product is
+    being retired on 2026-01-16. Its SDKs, APIs, and hosted services will stop
+    receiving updates after that date. This catalog documents the API as
+    published as of the review date and is kept deliberately distinct from the
+    separate 1Password secrets-manager (Connect / Events / SCIM) catalog.
+  transports:
+    - protocol: REST
+      scheme: https
+      baseURL: https://api.passage.id/v1
+      documented: true
+    - protocol: WebSocket
+      scheme: wss
+      documented: false
+      note: No WebSocket endpoint is documented for the Passage Management API or auth flows.
+    - protocol: SSE
+      scheme: https
+      documented: false
+      note: No Server-Sent Events stream is documented on the Management API surface.
+  endpointsConfirmedRest:
+    - GET    https://api.passage.id/v1/apps/{app_id}/users
+    - POST   https://api.passage.id/v1/apps/{app_id}/users
+    - GET    https://api.passage.id/v1/apps/{app_id}/users/{user_id}
+    - PATCH  https://api.passage.id/v1/apps/{app_id}/users/{user_id}
+    - DELETE https://api.passage.id/v1/apps/{app_id}/users/{user_id}
+    - PATCH  https://api.passage.id/v1/apps/{app_id}/users/{user_id}/activate
+    - PATCH  https://api.passage.id/v1/apps/{app_id}/users/{user_id}/deactivate
+    - GET    https://api.passage.id/v1/apps/{app_id}/users/{user_id}/devices
+    - DELETE https://api.passage.id/v1/apps/{app_id}/users/{user_id}/devices/{device_id}
+    - DELETE https://api.passage.id/v1/apps/{app_id}/users/{user_id}/tokens
+    - POST   https://api.passage.id/v1/apps/{app_id}/magic-links
+  productStatus:
+    state: retiring
+    retirementDate: '2026-01-16'
+    note: Passage by 1Password is scheduled for retirement; APIs/SDKs/hosted services lose updates after this date.
+sources:
+  - url: https://docs.passage.id/api-docs/management-api
+    type: APIReference
+    note: Official Management API reference; lists app/user/magic-link operations and Bearer API-key auth.
+  - url: https://docs.passage.id/complete/magic-links
+    type: Documentation
+    note: Documents POST /apps/{app_id}/magic-links and its parameters.
+  - url: https://github.com/passageidentity/passage-go
+    type: SDK
+    note: Official Go client generated from Passage's OpenAPI spec; the confirmed REST endpoints and schemas above were read from passage.gen.go.
+  - url: https://passage.1password.com
+    type: Website
+    note: Product home; positions Passage as the passwordless/passkey platform under 1Password.
+actions:
+  asyncapiPath: null
+  apisYmlUpdated: true
+  reason: |
+    No streaming/WebSocket surface exists, so no AsyncAPI document was created.
+    apis.yml catalogs the REST Management API (Users, Magic Links) plus the
+    frontend Authentication flows, with the OpenAPI definition authored from the
+    official generated client. Product retirement status is documented honestly
+    in apis.yml, plans, rate-limits, finops, and this review.

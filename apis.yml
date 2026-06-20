@@ -1,0 +1,125 @@
+aid: passage-1password
+url: https://raw.githubusercontent.com/api-evangelist/passage-1password/refs/heads/main/apis.yml
+name: Passage by 1Password
+kind: company
+description: Passage by 1Password is a passwordless authentication platform that lets
+  developers add passkeys (WebAuthn), magic links, and biometric login to their apps.
+  It exposes a REST Management API at https://api.passage.id/v1 for server-side user
+  administration (CRUD, devices, tokens) and magic link creation, alongside frontend
+  Auth/WebAuthn flows. Note - 1Password has announced that the Passage product is
+  being retired on 2026-01-16; this catalog documents the API as published and is
+  distinct from the separate 1Password secrets-manager catalog.
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+tags:
+- Authentication
+- Passkeys
+- WebAuthn
+- Passwordless
+- Identity
+- Magic Links
+created: '2026-06-20'
+modified: '2026-06-20'
+specificationVersion: '0.19'
+apis:
+- aid: passage-1password:passage-management-api
+  name: Passage Management API
+  tags:
+  - Management
+  - Apps
+  - Users
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://docs.passage.id/api-docs/management-api
+  baseURL: https://api.passage.id/v1
+  properties:
+  - url: https://docs.passage.id/api-docs/management-api
+    type: Documentation
+  - url: https://docs.passage.id/api-docs/management-api
+    type: APIReference
+  - url: openapi/passage-1password-openapi.yml
+    type: OpenAPI
+  - url: collections/passage-1password.postman_collection.json
+    type: PostmanCollection
+  - url: collections/passage-1password.opencollection.json
+    type: OpenCollection
+  description: Server-side REST API authenticated with a Bearer API key for administering
+    a Passage app's users - paginated list, create, get, update, delete, activate,
+    deactivate, list/delete WebAuthn devices, and revoke refresh tokens.
+- aid: passage-1password:passage-users-api
+  name: Passage Users API
+  tags:
+  - Users
+  - CRUD
+  - Devices
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://docs.passage.id/api-docs/management-api
+  baseURL: https://api.passage.id/v1
+  properties:
+  - url: https://docs.passage.id/api-docs/management-api
+    type: Documentation
+  - url: openapi/passage-1password-openapi.yml
+    type: OpenAPI
+  - url: collections/passage-1password.postman_collection.json
+    type: PostmanCollection
+  - url: collections/passage-1password.opencollection.json
+    type: OpenCollection
+  description: User lifecycle operations under /apps/{app_id}/users - paginated and
+    filterable listing, create by email/phone with user_metadata, get, update, delete,
+    activate/deactivate, list and delete registered WebAuthn devices, and revoke a
+    user's refresh tokens.
+- aid: passage-1password:passage-magic-links-api
+  name: Passage Magic Links API
+  tags:
+  - Magic Links
+  - Passwordless
+  - Email
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://docs.passage.id/complete/magic-links
+  baseURL: https://api.passage.id/v1
+  properties:
+  - url: https://docs.passage.id/complete/magic-links
+    type: Documentation
+  - url: openapi/passage-1password-openapi.yml
+    type: OpenAPI
+  - url: collections/passage-1password.postman_collection.json
+    type: PostmanCollection
+  - url: collections/passage-1password.opencollection.json
+    type: OpenCollection
+  description: Creates embedded or sent magic links via POST /apps/{app_id}/magic-links
+    for login or identifier verification, with email/phone channel, language, TTL,
+    redirect URL, and optional auto-send. Creates the user if they do not yet exist.
+- aid: passage-1password:passage-authentication-api
+  name: Passage Authentication API
+  tags:
+  - Authentication
+  - Passkeys
+  - WebAuthn
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://docs.passage.id/home
+  baseURL: https://api.passage.id/v1
+  properties:
+  - url: https://docs.passage.id/home
+    type: Documentation
+  - url: openapi/passage-1password-openapi.yml
+    type: OpenAPI
+  description: Frontend passwordless authentication flows - passkey (WebAuthn) registration
+    and login, magic link redemption, and JWT issuance. These flows are driven by
+    the Passage frontend SDKs / Elements and validated server-side against the app's
+    JWKS; user state is reflected through the Management API surface.
+common:
+- type: GitHubOrganization
+  url: https://github.com/passageidentity
+- type: LinkedIn
+  url: https://www.linkedin.com/company/1password
+- type: Website
+  url: https://passage.1password.com
+- type: Documentation
+  url: https://docs.passage.id/home
+- type: Plans
+  url: plans/passage-1password-plans-pricing.yml
+- type: RateLimits
+  url: rate-limits/passage-1password-rate-limits.yml
+- type: FinOps
+  url: finops/passage-1password-finops.yml
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com
