@@ -106,6 +106,14 @@ apis:
     the Passage frontend SDKs / Elements and validated server-side against the app's
     JWKS; user state is reflected through the Management API surface.
 common:
+- type: TrustCenter
+  url: security/passage-1password-trust-center.yml
+- type: VulnerabilityDisclosure
+  url: security/passage-1password-vulnerability-disclosure.yml
+- type: DomainSecurity
+  url: security/passage-1password-domain-security.yml
+- type: Authentication
+  url: authentication/passage-1password-authentication.yml
 - type: GitHubOrganization
   url: https://github.com/passageidentity
 - type: LinkedIn
