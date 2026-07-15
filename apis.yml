@@ -106,6 +106,8 @@ apis:
     the Passage frontend SDKs / Elements and validated server-side against the app's
     JWKS; user state is reflected through the Management API surface.
 common:
+- type: AgenticAccess
+  url: agentic-access/passage-1password-agentic-access.yml
 - type: TrustCenter
   url: security/passage-1password-trust-center.yml
 - type: VulnerabilityDisclosure
