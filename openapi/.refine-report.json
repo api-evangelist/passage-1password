@@ -1,0 +1,20 @@
+{
+  "provider": "passage-1password",
+  "sources": [
+    "passage-1password-devices-api-openapi.yml",
+    "passage-1password-magic-links-api-openapi.yml",
+    "passage-1password-tokens-api-openapi.yml",
+    "passage-1password-users-api-openapi.yml"
+  ],
+  "outputs": [
+    "passage-1password-devices-api-openapi.yml",
+    "passage-1password-magic-links-api-openapi.yml",
+    "passage-1password-tokens-api-openapi.yml",
+    "passage-1password-users-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
