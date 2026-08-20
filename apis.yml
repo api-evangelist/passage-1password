@@ -106,6 +106,8 @@ apis:
   humanURL: https://docs.passage.id/api-docs/management-api
   baseURL: https://api.passage.id/v1
   tags:
+  - User
+  tags_raw:
   - Users
   properties:
   - type: OpenAPI
