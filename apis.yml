@@ -9,6 +9,18 @@ description: Passage by 1Password is a passwordless authentication platform that
   Auth/WebAuthn flows. Note - 1Password has announced that the Passage product is
   being retired on 2026-01-16; this catalog documents the API as published and is
   distinct from the separate 1Password secrets-manager catalog.
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: true
+  label: Hosted service · you call their endpoint
+  confidence: high
+  source:
+  - openapi
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: freemium
   onboarding: self-serve
