@@ -1,0 +1,27 @@
+# Front Door AI Index — passage-1password — 2026-09-17
+# AI vocabulary counted on the provider's root page. Generated; do not edit.
+# `score` is null unless ownership is `own` — see front_door_ai.py.
+front_door_ai:
+  slug: passage-1password
+  lexicon_version: '1.0'
+  probed_at: '2026-09-17'
+  host: passage.1password.com
+  final_host: 1password.com
+  ownership: inherited
+  owner: passage-1password
+  shares_host_with: null
+  inherited_from: 1password.com
+  verdict: scored
+  score: null
+  host_score: 15
+  density: null
+  words: 358
+  tiers:
+    agentic: 4
+    core: 11
+    model: 0
+  ambiguous: 5
+  top_terms:
+    AI: 11
+    agent: 5
+    AI agent: 4
