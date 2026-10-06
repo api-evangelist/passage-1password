@@ -44,7 +44,7 @@ tags:
 - Identity
 - Magic Links
 created: '2026-06-20'
-modified: '2026-06-20'
+modified: '2026-10-06'
 specificationVersion: '0.23'
 apis:
 - aid: passage-1password:passage-1password-devices-api
@@ -138,6 +138,10 @@ apis:
   - type: Documentation
     url: https://docs.passage.id/home
 common:
+- url: https://1password.com/blog
+  type: Blog
+- url: https://1password.com/blog/index.xml
+  type: BlogRSS
 - type: CapabilityMap
   url: capabilities/passage-1password-capability-edges.yml
   name: Passage by 1Password Business Capability Map
