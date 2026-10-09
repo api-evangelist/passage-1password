@@ -7,14 +7,17 @@ front_door_ai:
   probed_at: '2026-09-17'
   host: passage.1password.com
   final_host: 1password.com
-  ownership: inherited
+  ownership: own
   owner: passage-1password
   shares_host_with: null
-  inherited_from: 1password.com
+  inherited_from: null
+  alias_of: 1password.com
   verdict: scored
-  score: null
+  score: 15
+  band: 5
+  band_label: prominent
   host_score: 15
-  density: null
+  density: 41.9
   words: 358
   tiers:
     agentic: 4
