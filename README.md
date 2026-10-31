@@ -1,4 +1,4 @@
-# Passage by 1Password (passage-1password)
+# Passage by 1Password
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,116 +66,124 @@
 
 Passage by 1Password is a passwordless authentication platform that lets developers add passkeys (WebAuthn), magic links, and biometric login to their apps. It exposes a REST Management API at https://api.passage.id/v1 for server-side user administration (CRUD, devices, tokens) and magic link creation, alongside frontend Auth/WebAuthn flows. Note - 1Password has announced that the Passage product is being retired on 2026-01-16; this catalog documents the API as published and is distinct from the separate 1Password secrets-manager catalog.
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/passage-1password/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/passage-1password/refs/heads/main/apis.yml)
+**Areas:** Authentication · Passkeys · WebAuthn · Passwordless · Identity · Magic Links
 
-> This is the **Passage** passwordless / passkey product by 1Password (passage.1password.com, api.passage.id). It is intentionally kept separate from the `1password` catalog repo, which covers the 1Password secrets-manager surface (Connect Server, Events, SCIM).
+## Passage by 1Password on APIs.io
 
-## Tags
+Everything profiled for Passage by 1Password is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/passage-1password/](https://apis.io/providers/passage-1password/)** — or go straight to one of the APIs or properties below.
 
-- Authentication
-- Passkeys
-- WebAuthn
-- Passwordless
-- Identity
-- Magic Links
+### APIs (4)
 
-## Timestamps
+- [Passage by 1Password Devices API](https://apis.io/apis/passage-1password/passage-1password-devices-api/) — WebAuthn (passkey) device management for a user.
+- [Passage by 1Password Magic Links API](https://apis.io/apis/passage-1password/passage-1password-magic-links-api/) — Magic link creation for passwordless login and identifier verification.
+- [Passage by 1Password Tokens API](https://apis.io/apis/passage-1password/passage-1password-tokens-api/) — Refresh-token management for a user.
+- [Passage by 1Password Users API](https://apis.io/apis/passage-1password/passage-1password-users-api/) — User administration for a Passage app.
 
-- **Created:** 2026-06-20
-- **Modified:** 2026-06-20
+### Published properties
 
-## APIs
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-### Passage Management API
+#### Agentic access (1)
 
-Server-side REST API authenticated with a Bearer API key for administering a Passage app's users - paginated list, create, get, update, delete, activate, deactivate, list/delete WebAuthn devices, and revoke refresh tokens.
+Which operations an agent can call, which act, and which need a human in the loop.
 
-- **Human URL:** [https://docs.passage.id/api-docs/management-api](https://docs.passage.id/api-docs/management-api)
-- **Base URL:** `https://api.passage.id/v1`
+- [Passage 1Password Agentic Access](https://apis.io/agentic-access/passage-1password/passage-1password-agentic-access/)
 
-#### Tags
+#### Collections (5)
 
-- Management
-- Apps
-- Users
+Postman and Open Collection request collections.
 
-#### Properties
+- [Passage by 1Password Management API](https://apis.io/collections/passage-1password/open-passage-1password/)
+- [Passage by 1Password Management Devices API](https://apis.io/collections/passage-1password/open-passage-1password-devices-api/)
+- [Passage by 1Password Management Devices Magic Links API](https://apis.io/collections/passage-1password/open-passage-1password-magic-links-api/)
+- [Passage by 1Password Management Devices Tokens API](https://apis.io/collections/passage-1password/open-passage-1password-tokens-api/)
+- [Passage by 1Password Management Devices Users API](https://apis.io/collections/passage-1password/open-passage-1password-users-api/)
 
-- [Documentation](https://docs.passage.id/api-docs/management-api)
-- [API Reference](https://docs.passage.id/api-docs/management-api)
-- [OpenAPI](openapi/passage-1password-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/passage-1password.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/passage-1password.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+#### Security (4)
 
-### Passage Users API
+Authentication, trust centre, and vulnerability disclosure.
 
-User lifecycle operations under `/apps/{app_id}/users` - paginated and filterable listing, create by email/phone with user_metadata, get, update, delete, activate/deactivate, list and delete registered WebAuthn devices, and revoke a user's refresh tokens.
+- [Passage 1Password Authentication](https://apis.io/security/passage-1password/passage-1password-authentication/)
+- [Passage 1Password Domain Security](https://apis.io/security/passage-1password/passage-1password-domain-security/)
+- [Passage 1Password Trust Center](https://apis.io/security/passage-1password/passage-1password-trust-center/)
+- [Passage 1Password Vulnerability Disclosure](https://apis.io/security/passage-1password/passage-1password-vulnerability-disclosure/)
 
-- **Human URL:** [https://docs.passage.id/api-docs/management-api](https://docs.passage.id/api-docs/management-api)
-- **Base URL:** `https://api.passage.id/v1`
+#### Plans and pricing (1)
 
-#### Tags
+Published plans, tiers and prices.
 
-- Users
-- CRUD
-- Devices
+- [Passage 1Password Plans Pricing](https://apis.io/plans/passage-1password/passage-1password-plans-pricing/)
 
-#### Properties
+#### Rate limits (1)
 
-- [Documentation](https://docs.passage.id/api-docs/management-api)
-- [OpenAPI](openapi/passage-1password-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/passage-1password.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/passage-1password.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+Published request limits.
 
-### Passage Magic Links API
+- [Passage 1Password Rate Limits](https://apis.io/rate-limits/passage-1password/passage-1password-rate-limits/)
 
-Creates embedded or sent magic links via `POST /apps/{app_id}/magic-links` for login or identifier verification, with email/phone channel, language, TTL, redirect URL, and optional auto-send. Creates the user if they do not yet exist.
+#### FinOps (1)
 
-- **Human URL:** [https://docs.passage.id/complete/magic-links](https://docs.passage.id/complete/magic-links)
-- **Base URL:** `https://api.passage.id/v1`
+What the API costs to run, by operation.
 
-#### Tags
+- [Passage 1Password Finops](https://apis.io/finops/passage-1password/passage-1password-finops/)
 
-- Magic Links
-- Passwordless
-- Email
+## Where to find this API
 
-#### Properties
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
 
-- [Documentation](https://docs.passage.id/complete/magic-links)
-- [OpenAPI](openapi/passage-1password-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/passage-1password.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/passage-1password.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-### Passage Authentication API
-
-Frontend passwordless authentication flows - passkey (WebAuthn) registration and login, magic link redemption, and JWT issuance. These flows are driven by the Passage frontend SDKs / Elements and validated server-side against the app's JWKS; user state is reflected through the Management API surface.
-
-- **Human URL:** [https://docs.passage.id/home](https://docs.passage.id/home)
-- **Base URL:** `https://api.passage.id/v1`
-
-#### Tags
-
-- Authentication
-- Passkeys
-- WebAuthn
-
-#### Properties
-
-- [Documentation](https://docs.passage.id/home)
-- [OpenAPI](openapi/passage-1password-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-
-## Common Properties
-
-- [GitHub Organization](https://github.com/passageidentity)
-- [LinkedIn](https://www.linkedin.com/company/1password)
 - [Website](https://passage.1password.com)
 - [Documentation](https://docs.passage.id/home)
-- [Plans](plans/passage-1password-plans-pricing.yml)
-- [Rate Limits](rate-limits/passage-1password-rate-limits.yml)
-- [Fin Ops](finops/passage-1password-finops.yml)
+- [Blog](https://1password.com/blog)
+- [GitHub](https://github.com/passageidentity)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
+**Kin Score 28.6** — thin · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 66.1 |
+| Contract quality | 50.7 |
+| Contract governance | 0.0 |
+| Operational transparency | 7.9 |
+| Developer ergonomics | 23.8 |
+| Access clarity | 15.8 |
+
+**Agent readiness 17.9** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 22.5** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/passage-1password/](https://apis.io/providers/passage-1password/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Passage by 1Password: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/passage-1password/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
